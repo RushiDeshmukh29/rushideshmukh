@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="icon" href="images/circle-cropped.png">
+
+    <link href="css\css-circular-prog-bar.css" rel="stylesheet">
+
+
+    <title>Hrushikesh Deshmukh</title>
+
+    <style type="text/css">
+        div.b {
+            text-align: left;
+        }
+        
+        .carousel .carousel-item {
+            height: 500px;
+        }
+        
+        .carousel-item img {
+            position: absolute;
+            object-fit: fill;
+            top: 0;
+            left: 0;
+            min-height: 400px;
+            min-width: 100%;
+        }
+        
+        @media screen and (min-width: 601px) {
+            .example {
+                font-size: 30px;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .example {
+                font-size: 15px;
+            }
+        }
+        
+        @media screen and (min-width: 800px) {
+            .example {
+                font-size: 40px;
+            }
+        }
+        
+        .myimg {
+            max-width: 100%;
+            min-width: 50%;
+            max-height: 100%;
+            min-height: 50%;
+            display: block;
+            /* remove extra space below image */
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Center the loader */
+        
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 120px;
+            height: 120px;
+            margin: -76px 0 0 -76px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid black;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+        
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        /* Add animation to "page content" */
+        
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+        
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+        
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+        
+        #myDiv1 {
+            display: none;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .navbar-nav {
+                float: none;
+                text-align: center;
+            }
+            .navbar-nav li {
+                display: inline-block;
+                float: none;
+            }
+        }
+        
+        .myDiv {
+            background-color: grey;
+        }
+        
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-bottom: 16px solid blue;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+        
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @font-face {
+            font-family: "CustomFont";
+            src: url("font\LineIcons.ttf");
+        }
+        
+        div {
+            font-family: 'CustomFont', Arial, sans-serif;
+        }
+    </style>
+
+</head>
+
+<body onload="myFunction()">
+    <div id="loader"></div><br>
+    <div style="display:none;" id="myDiv1" class="animate-bottom container-fluid">
+        <!--NavBar for Page Navigation-->
+        <nav id="home" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <span class="navbar-brand mb-0 h1">Hrushikesh Janardhan Deshmukh</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="true" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="col"></div>
+                <div class="collapse navbar-collapse justify-content-center col-6" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#Qualification">Qualification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#Projects" tabindex="-1" aria-disabled="true">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#courses" tabindex="-1" aria-disabled="true">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#gallery" tabindex="-1" aria-disabled="true">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#Resume" tabindex="-1" aria-disabled="true">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#contact" tabindex="-1" aria-disabled="true">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col d-flex">
+                    <a type="button" class="btn btn-outline-primary img-fluid img-thumbnail" target="_blank" href="https://www.linkedin.com/in/hrushikesh-janardhan-deshmukh" rel="noopener noreferrer"><img src="images/link-logo.png" width="40" height="35"></a>&nbsp;
+                    <a type="button" class="btn btn-outline-danger img-fluid img-thumbnail" target="_blank" href="https://www.instagram.com/point.dxtr/" rel="noopener noreferrer"><img src="images/insta-logo.png" width="40" height="35"></a>
+
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--Introduction Here-->
+        <div class="row container-fluid justify-content-center">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <h1>Hello,</h1>
+                        <span class="h2">I am Hrushikesh Deshmukh,</span>
+                        <p class="h5">this is everything I learned & accomplished.</p>
+                        <br>
+                        <a type="button" class="btn btn-success" href="https://drive.google.com/uc?export=download&id=10SKzCJVvemASChtoD4L8uNC8-3SnDJo6" target="_blank">Download Resume</a>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;
+                    <div class="col">
+                        <img class="myimg rounded-circle" alt="100x100" src="images\Photo.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Qualificaions Here-->
+        <br id="Qualification">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="bd-example container-fluid">
+            <h1 align="center" id="Qualification">Qualification</h1>
+
+        </div>
+        <div class="container b">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" align="center">M.Sc or Master of Science in Computer Science <span class="badge bg-danger">Latest</span></h4>
+                            <h5 class="card-subtitle mb-2 text-muted">Specialization: Cloud Computing</h5>
+                            <h7 class="card-text">
+                                Graduated: 2021
+                                <br> CGPA: 9.55/10
+                                <br> College: <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q=D.+G.+Ruparel+College+of+Arts%2C+Science+and+Commerce&rlz=1C1CHBD_enIN910IN910&sxsrf=ALeKk03Wy7GV-ZutJtPJ4d3SC910MnDsUQ%3A1627896553418&oq=D.+G.+Ruparel+College+of+Arts%2C+Science+and+Commerce&sclient=gws-wiz&ved=0ahUKEwism7Ceg5LyAhWLbn0KHU7oD6sQ4dUDCA4&uact=5">D.G. Ruparel College, Matunga</a>
+                                <br> University: Mumbai University
+                            </h7>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body container-fluid">
+                            <h4 class="card-title" align="center">B.Sc or Bachelor of Science in Computer Science</h4>
+                            <h7 class="card-text">
+                                Graduated: 2019
+                                <br> CGPA: 8.99/10
+                                <br> College: <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q=Seva+Sadan%27s+R.+K.+Talreja+College%2C+Ulhasnagar%2C+Thane%2C+Maharashtra&rlz=1C1CHBD_enIN910IN910&sxsrf=ALeKk03fPt2GeZF-KOtLwqc-X_SGrKII6g%3A1627897241861&oq=Seva+Sadan%27s+R.+K.+Talreja+College%2C+Ulhasnagar%2C+Thane%2C+Maharashtra&sclient=gws-wiz&ved=0ahUKEwjzrtPmhZLyAhXTfn0KHaZlDkYQ4dUDCA4&uact=5">Seva Sadan's R. K. Talreja College, Ulhasnagar</a>
+                                <br> University: Mumbai University
+                            </h7>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body container-fluid">
+                            <h4 class="card-title" align="center">12th or Higher Secondary Certificate (HSC)</h4>
+                            <h5 class="card-subtitle mb-2 text-muted">Stream: Science</h5>
+                            <h7 class="card-text">
+                                Graduated: 2016
+                                <br> Percentage: 54%
+                                <br> College: <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q=Seva+Sadan%27s+R.+K.+Talreja+College%2C+Ulhasnagar%2C+Thane%2C+Maharashtra&rlz=1C1CHBD_enIN910IN910&sxsrf=ALeKk03fPt2GeZF-KOtLwqc-X_SGrKII6g%3A1627897241861&oq=Seva+Sadan%27s+R.+K.+Talreja+College%2C+Ulhasnagar%2C+Thane%2C+Maharashtra&sclient=gws-wiz&ved=0ahUKEwjzrtPmhZLyAhXTfn0KHaZlDkYQ4dUDCA4&uact=5">Seva Sadan's R. K. Talreja College, Ulhasnagar</a>
+                                <br> Board: Maharashtra State Board of Secondary and Higher Secondary Education
+                            </h7>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body container-fluid">
+                            <h4 class="card-title" align="center">10th or Secondary School Certificate (SSC)</h4>
+                            <h7 class="card-text">
+                                Graduated: 2014
+                                <br> Percentage: 79.20%
+                                <br> College: <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q=Seva+Sadan+Trust%2C+SPP+New+Era+High+School+%26+Junior+College+&rlz=1C1CHBD_enIN910IN910&sxsrf=ALeKk03epL0Y348gUHg6K6ukKXaSw-N-Cg%3A1627897301906&oq=Seva+Sadan+Trust%2C+SPP+New+Era+High+School+%26+Junior+College+&sclient=gws-wiz&ved=0ahUKEwjplaSDhpLyAhXYWisKHUhIA-gQ4dUDCA4&uact=5">SPP New Era High School & Junior College, Ulhasnagar</a>
+                                <br> Board: Maharashtra State Board of Secondary and Higher Secondary Education
+                            </h7>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!--Skills here-->
+        <br id="skills">
+        <br>
+        <br>
+        <br>
+        <div class="row container-fluid justify-content-center">
+            <h1 align="center" id="skills">Skills</h1>
+            <br>
+            <br>
+        </div>
+        <br>
+        <div class="container">
+            <div class="col"></div>
+            <div class="col col-mb-2">
+                <div class="row">
+                    <h4 align="center">Technical Skills</h4>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">HTML</h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">80%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 80%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">Python</h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">75%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 75%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">Java</h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">70%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 70%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">Google Firebase Realtime Database</h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">70%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 70%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">Android Development (Java)</h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">65%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 65%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">C# (C-Sharp)</h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">50%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 50%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                    </div>
+                    <div class="col">
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">Microsoft SQL Server</h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">50%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 50%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">MySQL</h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">50%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 50%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">Bootstrap <span class="badge bg-danger">New</span></h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">30%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 30%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">Flask <span class="badge bg-danger">New</span></h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">25%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 25%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">CSS <span class="badge bg-danger">New</span></h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">20%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 20%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5 align="left">Amazon Web Services <span class="badge bg-danger">New</span></h5>
+                            </div>
+                            <div class="col">
+                                <h5 align="right">20%</h5>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 20%;background-color: black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"> <br></div>
+
+        </div>
+        <!-- Academic Projects and its details -->
+        <br id="Projects">
+        <br>
+        <br>
+        <br>
+        <!--Latest-->
+        <div class="container" align="center">
+            <h1 align="center" id="Projects">Academic Projects</h1>
+            <div class="card">
+                <div class="card-body container-fluid">
+                    <h5 class="card-title"><b>Movie Recommendation Android App based on Google Firebase and Heroku</b> <span class="badge bg-danger">Latest</span></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">February 2021 - June 2021</h6>
+                    <br>
+                    <img class="myimg z-depth-200" alt="100x100" src="images\Android-prj.jpg" data-holder-rendered="true"><br>
+                    <p class="card-text" align="left"><b>• Front End:</b> Android Studio <br><b>• Back End:</b> Google Firebase Realtime Database<br><b>• Overview:</b><br> &nbsp;&nbsp;The Movie Recommendation App is an android app based on Google Firebase and Heroku.
+                        <br>&nbsp;&nbsp;It helps user to find movie suggestion based on their interest.<br>&nbsp;&nbsp;The app shows recommendation based on the genre, overall rating, cast, director, etc.</p>
+                    <p class="card-text" align="left"><b>Skills:</b><br>
+                        <button type="button" class="btn btn-outline-primary">Java</button>
+                        <button type="button" class="btn btn-outline-primary">Python</button>
+                        <button type="button" class="btn btn-outline-primary">JSON</button>
+                        <button type="button" class="btn btn-outline-primary">Heroku</button>
+                        <button type="button" class="btn btn-outline-primary">Flask</button>
+                        <button type="button" class="btn btn-outline-primary">Google Firebase Realtime Database</button>
+                        <button type="button" class="btn btn-outline-primary">Android Studio</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!--Old-->
+        <div class="container" align="center">
+            <div class="card">
+                <div class="card-body container-fluid">
+                    <h5 class="card-title"><b>AIRHOCKEY-Android Game</b></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">December 2018 - March 2019</h6>
+                    <br>
+                    <img class="myimg z-depth-200" alt="100x100" src="images\Android-prj.jpg" data-holder-rendered="true">
+                    <br>
+                    <p class="card-text" align="left"><b>• Front End:</b> Microsoft Visual Studio (C#) and Unity <br><b>• Back End:</b> Google Firebase Realtime Database <br><b>• Overview:</b><br> &nbsp;&nbsp;The AirHockey is casual android game developed using Unity and Firebase.
+                        <br>&nbsp;&nbsp;It is a simple 2-Dimensional play to provide users a fun gaming experience.<br>&nbsp;&nbsp;It has modes such as Normal, Training, and Multiplayer Mode to enjoy.</p>
+                    <p class="card-text" align="left"><b>Skills:</b><br>
+                        <button type="button" class="btn btn-outline-primary">C#</button>
+                        <button type="button" class="btn btn-outline-primary">Unity</button>
+                        <button type="button" class="btn btn-outline-primary">Microsoft Visual Studio</button>
+                        <button type="button" class="btn btn-outline-primary">Google Firebase Realtime Database</button>
+                        <button type="button" class="btn btn-outline-primary">Android Studio</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!--Oldest-->
+        <div class="container" align="center">
+            <div class="card">
+                <div class="card-body container-fluid">
+                    <h5 class="card-title"><b>Online Hotel Booking Website</b></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">July 2018 - November 2018</h6>
+                    <br>
+                    <img class="myimg z-depth-200" alt="100x100" src="images\websitw-prj.jpg" width="1000" height="417" data-holder-rendered="true">
+                    <br>
+                    <p class="card-text" align="left"><b>• Front End:</b> Microsoft Visual Studio (ASP.NET using C#) <br><b>• Back End:</b> Microsoft SQL Server <br><b>• Overview:</b><br> &nbsp;&nbsp;The Online Hotel Booking Portal is a simple website to helps users to book rooms and
+                        manage their bookings.</p>
+                    <p class="card-text" align="left"><b>Skills:</b><br>
+                        <button type="button" class="btn btn-outline-primary">C#</button>
+                        <button type="button" class="btn btn-outline-primary">ASP.Net</button>
+                        <button type="button" class="btn btn-outline-primary">Microsoft SQL Server 2008</button>
+                        <button type="button" class="btn btn-outline-primary">Microsoft Visual Studio</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Cources ID-->
+        <br id="courses">
+        <br>
+        <!--Cources Here-->
+        <br>
+        <div class="row container-fluid justify-content-center">
+            <h1 align="center" id="courses">Courses</h1>
+            <br>
+            <br>
+        </div>
+        <br>
+        <div>
+            <div class="container" align="center">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-c1-tab" data-bs-toggle="pill" data-bs-target="#pills-c1" type="button" role="tab" aria-controls="pills-home" aria-selected="true">1.Building Modern Python Applications on AWS <span class="badge bg-danger">Latest</span></button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-c2-tab" data-bs-toggle="pill" data-bs-target="#pills-c2" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">2.Learning Python <span class="badge bg-danger">Latest</span></button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-c3-tab" data-bs-toggle="pill" data-bs-target="#pills-c3" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">3.Machine Learning A-Z TM</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-c4-tab" data-bs-toggle="pill" data-bs-target="#pills-c4" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">4.Career Edge – Knockdown the Lockdown</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-c5-tab" data-bs-toggle="pill" data-bs-target="#pills-c5" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">5.AI Demystified</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" id="pills-tabContent" align="center">
+                <div class="tab-pane fade show active" id="pills-c1" role="tabpanel" aria-labelledby="pills-c1-tab">
+                    <iframe src="https://drive.google.com/file/d/1HH48QKFCxLm3h9Pya75zF3WUtDzLrA6L/preview" width="80%" height="480" allow="autoplay"></iframe>
+                </div>
+                <div class="tab-pane fade" id="pills-c2" role="tabpanel" aria-labelledby="pills-c2-tab">
+                    <iframe src="https://drive.google.com/file/d/1Lutdnzm-oX3LCrhdEFYWbJ67DdVtXZjU/preview" width="80%" height="480" allow="autoplay"></iframe>
+                </div>
+                <div class="tab-pane fade" id="pills-c3" role="tabpanel" aria-labelledby="pills-c3-tab">
+                    <iframe src="https://drive.google.com/file/d/1tpQnKOAghnWCBL1MokZeOhEE2zxGyvMO/preview" width="80%" height="480" allow="autoplay"></iframe>
+                </div>
+                <div class="tab-pane fade" id="pills-c4" role="tabpanel" aria-labelledby="pills-c4-tab">
+                    <iframe src="https://drive.google.com/file/d/1TLlRdsDM97W4CDg9-S2em1N7J0IINabs/preview" width="80%" height="480" allow="autoplay"></iframe>
+                </div>
+                <div class="tab-pane fade" id="pills-c5" role="tabpanel" aria-labelledby="pills-c5-tab">
+                    <iframe src="https://drive.google.com/file/d/1u4sEHK1m66-G8W02pt5ibZgQ84wtdhgD/preview" width="80%" height="480" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+        <!--Event ID-->
+        <br id="events">
+        <br>
+        <!--Event Here-->
+        <br>
+        <div class="row container-fluid justify-content-center">
+            <h1 align="center" id="events">Events</h1>
+            <br>
+            <br>
+        </div>
+        <br>
+        <div>
+            <div class="container">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-e1-tab" align="center" data-bs-toggle="pill" data-bs-target="#pills-e1" type="button" role="tab" aria-controls="pills-home" aria-selected="true">AWS Builder Series (Online)<span class="badge bg-danger">Latest</span></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" id="pills-tabContent" align="center">
+                <div class="tab-pane fade show active" id="pills-e1" role="tabpanel" aria-labelledby="pills-e1-tab">
+                    <iframe src="https://drive.google.com/file/d/1ifsY1iLfvBpGqQtwfflbplKAGRml23v_/preview" width="80%" height="480" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+        <br id="gallery">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row container-fluid justify-content-center">
+            <h1 align="center" id="gallery">Gallery</h1>
+            <br>
+            <br>
+        </div>
+        <!--Coursel for College Photos images -->
+        <div class="container-fluid col-6" width="100%">
+            <div id="carouselExampleInterval" class="carousel slide myimg" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="images/ruparel1.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/ruparel2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/ruparel3.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/ruparel4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/rkt1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/rkt2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Show and Download Resume-->
+        <br id="Resume">
+        <br>
+        <br>
+        <div class="container-fluid" align="center">
+            <h1 align="center" id="Resume">Resume</h1>
+            <br>
+            <!--Download Button-->
+            <a type="button" class="btn btn-success" href="https://drive.google.com/uc?export=download&id=10SKzCJVvemASChtoD4L8uNC8-3SnDJo6" target="_blank">Download</a>
+            <br>
+            <br>
+            <!--View Frame-->
+            <iframe src="https://drive.google.com/file/d/10SKzCJVvemASChtoD4L8uNC8-3SnDJo6/preview" width="80%" height="480" allow="autoplay"></iframe>
+
+        </div>
+        <!--Contact details-->
+        <br>
+        <br>
+        <br>
+
+        <div class="bd-example container-fluid myDiv" align="center">
+            <br>
+            <h1 align="center" id="contact">Contact</h1>
+            <br>
+            <a target="_blank" href="https://www.linkedin.com/in/hrushikesh-janardhan-deshmukh" rel="noopener noreferrer"><img src="images/link-logo.png" width="36" height="36"></a>&nbsp;&nbsp;&nbsp;
+            <a target="_blank" href="https://www.instagram.com/point.dxtr/" rel="noopener noreferrer"><img src="images/insta-logo.png" width="36" height="36"></a>
+            <br>
+            <br>
+            <address>
+                <h1 class="example" >rushideshmukh2932@gmail.com</h1><br>
+            <strong>Address</strong><br>
+            <p>
+                B-510, Gurudarshan Tower, Marbel Bazar, 
+          Mohane Road, Shahad, Kalyan, Maharashtra, India<br>
+          Pin Code - 421103<br>
+          <img src="images/calling.png" width="30" height="30">  7977389376
+          &nbsp;
+          <img src="images/WA-logo-removebg-preview.png" width="30" height="30"> 9757488787
+            </p>          
+        </address>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>-->
+    <!--1000-->
+    <script>
+        var myVar;
+
+        function myFunction() {
+
+            myVar = setTimeout(showPage, 1000);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv1").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
